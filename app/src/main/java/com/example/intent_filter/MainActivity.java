@@ -1,13 +1,9 @@
 package com.example.intent_filter;
 
-import android.annotation.SuppressLint;
 import android.app.SearchManager;
-import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.net.Uri;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +12,6 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.core.app.ActivityCompat;
-import com.example.intent_filter.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     EditText search_field;
     ImageView camera_result;
 
+    final int PICTURE_REQUEST = 293658;
+    final int FORMAT_REQUEST = 896553;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,31 +51,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCLickCamera () {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, 1);
+        startActivityForResult(intent, PICTURE_REQUEST);
     }
 
     public void onCLickFormat () {
         Intent intent = new Intent(MainActivity.this, EditActivity.class);
         intent.putExtra("color", search_field.getCurrentTextColor());
         intent.putExtra("align", search_field.getTextAlignment());
-        startActivityForResult(intent, 2);
+        startActivityForResult(intent, FORMAT_REQUEST);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode){
-            case 1:
+            case PICTURE_REQUEST:
                 Bitmap picture = (Bitmap)data.getExtras().get("data");
                 camera_result.setImageBitmap(picture);
                 break;
-            case 2:
+            case FORMAT_REQUEST:
                 if (resultCode == RESULT_OK) {
                     int color = data.getIntExtra("color", 0);
                     int align = data.getIntExtra("align", 0);
                     search_field.setTextColor(color);
                     search_field.setTextAlignment(align);
-
                 }
                 break;
             default:

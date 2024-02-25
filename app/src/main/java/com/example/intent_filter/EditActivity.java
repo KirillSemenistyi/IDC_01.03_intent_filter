@@ -38,11 +38,11 @@ public class EditActivity extends AppCompatActivity {
         RBGreen.setOnClickListener(green -> {color = Color.GREEN;});
 
         RBLeft = findViewById(R.id.radioButtonLeft);
-        RBLeft.setOnClickListener(left -> {align = 2;});
+        RBLeft.setOnClickListener(left -> {align = View.TEXT_ALIGNMENT_TEXT_START;});
         RBRight = findViewById(R.id.radioButtonRight);
-        RBRight.setOnClickListener(left -> {align = 3;});
+        RBRight.setOnClickListener(left -> {align = View.TEXT_ALIGNMENT_TEXT_END;});
         RBCenter = findViewById(R.id.radioButtonCenter);
-        RBCenter.setOnClickListener(left -> {align = 4;});
+        RBCenter.setOnClickListener(left -> {align = View.TEXT_ALIGNMENT_CENTER;});
 
         switch(color) {
             case Color.BLACK:
