@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EditActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="1080px"
+            android:layout_height="2400px" tools:layout_editor_absoluteY="1dp" tools:layout_editor_absoluteX="1dp">
+        <TextView
+                android:text="Выберите цвет"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView"/>
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+            <RadioButton
+                    android:text="Черный"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioButtonBlack"/>
+            <RadioButton
+                    android:text="Красный"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioButtonRed"/>
+            <RadioButton
+                    android:text="Зеленый"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioButtonGreen"/>
+        </RadioGroup>
+        <TextView
+                android:text="Выберите выравнивание"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView2"/>
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+            <RadioButton
+                    android:text="Слева"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioButtonLeft"/>
+            <RadioButton
+                    android:text="По центру"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioButtonCenter"/>
+            <RadioButton
+                    android:text="Справа"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioButtonRight"/>
+        </RadioGroup>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <Button
+                    android:text="Сохранить"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/accept_button" android:layout_weight="1"/>
+            <Button
+                    android:text="Отмена"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/cancel_button" android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

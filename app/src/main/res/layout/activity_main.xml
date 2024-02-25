@@ -11,11 +11,18 @@
             android:layout_width="1080px"
             android:layout_height="2400px" tools:layout_editor_absoluteY="1dp" tools:layout_editor_absoluteX="1dp">
         <EditText
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:ems="10"
                 android:id="@+id/search_field"/>
+        <Button
+                android:text="Format text"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/format_button"/>
         <Button
                 android:text="Search"
                 android:layout_marginRight="10dp"
